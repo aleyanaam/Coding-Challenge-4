@@ -13,4 +13,19 @@ const inventory = [
   { name: 'Smartwatch', price: 250, quantity: 3, lowStockLevel: 1 },
 ];
 
+// Task 2
+function displayProductDetails(inventory){
+  // Ternary operator used to determine the stock status
+  const status = inventory.quantity <= inventory.lowStockLevel ? "Low Stock" : "In Stock";
+  //Returns the product information
+  return `Product:${inventory.name}
+  Price: $${inventory.price},  
+  Quantity: ${inventory.quantity}
+  Stock Level: ${status}`
+}
 
+// Iterates through the inventory array
+for(let i= 0; i < inventory.length; i++) {
+  // Outputs inventory information by calling the function
+console.log(displayProductDetails(inventory[i]));
+};
