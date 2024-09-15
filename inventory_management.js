@@ -29,3 +29,28 @@ for(let i= 0; i < inventory.length; i++) {
   // Outputs inventory information by calling the function
 console.log(displayProductDetails(inventory[i]));
 };
+
+//Task 3
+function updateStock(inventory, unitsSold){
+ // Updates the value for inventory quantity by subtracting the units that were sold
+  inventory.quantity -= unitsSold;
+   // Evaluates the quantity of each product to determine if it is low stock, in stock or out of stock
+   if (inventory.quantity <= inventory.lowStockLevel){
+     
+     return`${inventory.name} is Low stock`
+     
+   } else if (inventory.quantity <= 0){
+     
+   return `${inventory.name} is Out of Stock`
+   
+  } else {
+    
+  return `${inventory.name} is In Stock`
+  
+  }
+ };
+
+  //Iterates through the array and logs the updated stock for each item
+   for(let i= 0; i < inventory.length; i++) {
+  console.log(updateStock(inventory[i]));
+  };
