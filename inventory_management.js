@@ -68,3 +68,14 @@ function updateStock(inventory, unitsSold){
 console.log(checkLowStock(inventory)); // Displays the results
 
 //Task 5
+function calculateInventoryValue(inventory){
+  
+  let totalPrice= 0; // Declares the total price variable
+  
+  for(let i= 0; i < inventory.length; i++) {
+  totalPrice += inventory[i].quantity * inventory[i].price; // Calculates the total price by multiplying the price and quantity
+  }
+  
+  return `The total Value is $${totalPrice}`;
+}
+console.log(calculateInventoryValue(inventory)); // Outputs the total price
