@@ -39,11 +39,7 @@ function updateStock(inventory, unitsSold){
      
      return`${inventory.name} is Low stock`
      
-   } else if (inventory.quantity <= 0){
-     
-   return `${inventory.name} is Out of Stock`
-   
-  } else {
+   }  else {
     
   return `${inventory.name} is In Stock`
   
@@ -54,3 +50,21 @@ function updateStock(inventory, unitsSold){
    for(let i= 0; i < inventory.length; i++) {
   console.log(updateStock(inventory[i]));
   };
+
+  //Task 4
+
+  function checkLowStock(inventory){
+    // Iterates through the array to find the items that are low stock and displays those items
+      for(let i= 0; i < inventory.length; i++) {
+      if (inventory[i].quantity <= inventory[i].lowStockLevel){
+        return`Items that are low stock are: ${inventory[i].name}`;
+      } else {
+        return `Product is in Stock`
+      }
+      }
+   // })
+    
+  };
+console.log(checkLowStock(inventory)); // Displays the results
+
+//Task 5
