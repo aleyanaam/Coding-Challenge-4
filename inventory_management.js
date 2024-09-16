@@ -79,3 +79,19 @@ function calculateInventoryValue(inventory){
   return `The total Value is $${totalPrice}`;
 }
 console.log(calculateInventoryValue(inventory)); // Outputs the total price
+
+//Task 6
+function processSale(inventory,name){
+  
+  const product = inventory.find(product => product.name === name)
+ 
+  if (product) {
+     const updateQty = updateStock(product, unitsSold);
+    return `Product: ${product.name}
+    Price $${product.price}`
+  } else{
+    return `Product not in inventory`
+  }
+}
+
+console.log(processSale(inventory));
